@@ -29,7 +29,7 @@ for directory in directories:
         if filename.endswith(".png"): 
             image_path = os.path.join(directory, filename)
             image = imageio.imread(image_path)
-            images = np.array([image for _ in range(100)], dtype=np.uint8)  # Changed from 50 to 100
+            images = np.array([image for _ in range(100)], dtype=np.uint8)
             images_aug = seq(images=images)
             for i, image_aug in enumerate(images_aug):
                 imageio.imsave(f'{directory}/{filename[:-4]}_aug{i}.png', image_aug)
